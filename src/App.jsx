@@ -4,7 +4,7 @@ import { useMovie, useSearch } from './hooks';
 
 function App() {
     const { search, setSearch, error } = useSearch();
-    const { movies, getMovies } = useMovie({ search });
+    const { movies, getMovies, loading } = useMovie({ search });
 
     const handleOnSubmit = (event) => {
         event.preventDefault();
@@ -32,6 +32,9 @@ function App() {
                 { error && <p style={{color: "red"}}>{error}</p> }
             </header>
             <main>
+                {
+                    loading && <p>Cargando ...</p>
+                }
                 <Movies movies={movies} />
             </main>
         </div>

@@ -22,6 +22,7 @@ export function useMovie ({ search }) {
 
     return {
         movies,
-        getMovies
+        getMovies,
+        loading
     }
 }
