@@ -1,4 +1,3 @@
-import whitError from '../mocks/with-error.json';
 
 export function ListOfMovies ({ movies }) {
     return(
@@ -16,19 +15,18 @@ export function ListOfMovies ({ movies }) {
     )
 }
 
-export function NoMoviesResult ({error}) {
+export function NoMoviesResult () {
     return(
-        <p>{error}</p>
+        <p>No hay peliculas que cargar.</p>
     )
 }
 
 export function Movies ({ movies }) {
     const hasMovies = movies?.length > 0;
-    const hasError = whitError.Error;
 
     return (
         hasMovies
             ? <ListOfMovies movies={movies} />
-            : <NoMoviesResult error={hasError} />
+            : <NoMoviesResult />
     )
 }
