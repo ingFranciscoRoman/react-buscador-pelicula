@@ -1,6 +1,6 @@
 const API_KEY = '186eba59';
 
-export const serachMovies = async ({ search }) => {
+export const searchMovies = async ({ search }) => {
     if(search === '') return;
 
     try {
